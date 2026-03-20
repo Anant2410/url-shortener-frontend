@@ -1,12 +1,13 @@
 import React from 'react'
 import Card from "./Card";
 import { motion } from "framer-motion";
+import { useStoreContext } from '../ContextApi/ContextApi.jsx'; 
 let desc =
   "Generate short, memorable links with ease using Linklytics’s intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with Linklytics. Track clicks and manage your links seamlessly to enhance your online presence. Generate short, memorable links with ease using Linklytics’s intuitive interface. Share URLs effortlessly across platforms.";
 
-
-
 const LandingPage = () => {
+  const { token } = useStoreContext();
+  console.log("token from landing page: " + token);
 
   const dashboardNavigationHandler = () => {
     
