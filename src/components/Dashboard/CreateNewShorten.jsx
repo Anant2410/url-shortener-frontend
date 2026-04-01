@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useStoreContext } from '../../ContextApi/ContextApi';
+import { useStoreContext } from '../../ContextApi/ContextApi'
 import { useForm } from 'react-hook-form';
 import TextField from '../TextField';
-import { RxCross2 } from 'react-icons/rx';
 import { Tooltip } from '@mui/material';
+import { RxCross2 } from 'react-icons/rx';
 import api from '../../api/api';
 import toast from 'react-hot-toast';
 
@@ -43,7 +43,7 @@ const CreateNewShorten = ({ setOpen, refetch }) => {
             });
           });
 
-          //await refetch();
+          // await refetch();
           reset();
           setOpen(false);
     } catch (error) {

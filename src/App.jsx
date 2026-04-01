@@ -1,27 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import AboutPage from "./components/AboutPage";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import RegisterPage from "./components/RegisterPage";
-import { Toaster } from "react-hot-toast";
-import LoginPage from "./components/LoginPage";
-import DashboardLayout from "./components/Dashboard/DashboardLayout";
+import { BrowserRouter as Router } from "react-router-dom";
+import {getApps} from "./utils/helper";
+import "./App.css";
 
 const App = () => {
+
+  const CurrentApp = getApps();
   return (
     <Router>
-      <NavBar />
-      <Toaster position="bottom-center"/>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/dashboard" element={<DashboardLayout />} />
-      </Routes>
-      <Footer />
+      <CurrentApp />
     </Router>
   );
 };
