@@ -2,11 +2,18 @@ import React from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosMenu } from 'react-icons/io'
 import { RxCross2 } from 'react-icons/rx'
+import { useStoreContext} from "../ContextApi/ContextApi";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const { token, setToken } = useStoreContext();
   const path = useLocation().pathname;
   const [navbarOpen, setnavBarOpen] = React.useState(false);
-  const onLogoutHandler =() => {};
+  const onLogoutHandler =() => {
+      setToken(null);
+      localStorage.removeItem("JWT_TOKEN");
+      navigate("/login");
+  };
   return (
     <div className="h-16 bg-custom-gradient  z-50 flex items-center sticky top-0 ">
       <div className="lg:px-14 sm:px-8 px-4 w-full flex justify-between">
@@ -40,11 +47,33 @@ const NavBar = () => {
               About
             </Link>
           </li>
+          {token && (
+            <li className="hover:text-btnColor font-[500]  transition-all duration-150">
+            <Link
+              className={`${
+                path === "/dashboard" ? "text-white font-semibold" : "text-gray-200"
+              }`}
+              to="/dashboard"
+            >
+              Dashboard
+            </Link>
+          </li>
+          )}
+          {!token && (
            <Link to="/register">
               <li className=" sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150">
                 SignUp
               </li>
             </Link>
+            )}
+
+          {token && (
+            <button
+             onClick={onLogoutHandler}
+             className="sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150">
+              LogOut
+            </button>
+            )}
           </ul>
           <button
             onClick={() => setnavBarOpen(!navbarOpen)}
