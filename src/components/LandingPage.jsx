@@ -3,7 +3,7 @@ import Card from "./Card";
 import { motion } from "framer-motion";
 import { useStoreContext } from '../ContextApi/ContextApi.jsx'; 
 let desc =
-  "Generate short, memorable links with ease using Linklytics’s intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with Linklytics. Track clicks and manage your links seamlessly to enhance your online presence. Generate short, memorable links with ease using Linklytics’s intuitive interface. Share URLs effortlessly across platforms.";
+  "Generate short, memorable links with ease using ZipLink's intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with ZipLink. Track clicks and manage your links seamlessly to enhance your online presence. Generate short, memorable links with ease using ZipLink's intuitive interface. Share URLs effortlessly across platforms.";
 
 const LandingPage = () => {
   const { token } = useStoreContext();
@@ -26,13 +26,13 @@ const LandingPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className='font-bold font-roboto text-slate-800 md:text-5xl text-3xl md:leading-[55px] sm:leading-[45px] leading-10 lg:w-full md:w-[70%] w-full'>
-            Linklytics simplifies URL Shortening for Efficient Sharing.
+            ZipLink simplifies URL Shortening for Efficient Sharing.
           </motion.h1>
           <p className='text-slate-700 text-sm my-5'>
-            Linklytics streamlines the process of URL shortening, making sharing
+            ZipLink streamlines the process of URL shortening, making sharing
             links effortless and efficient. With its user-friendly interface,
-            Linklytics allows you to generate concise, easy-to-share URLs in
-            seconds. Simplify your sharing experience with Linklytics today.
+            ZipLink allows you to generate concise, easy-to-share URLs in
+            seconds. Simplify your sharing experience with ZipLink today.
           </p>
           <div className='flex items-center gap-3'>
             <motion.button 
